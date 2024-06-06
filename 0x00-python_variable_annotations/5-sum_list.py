@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from typing import Iterable
+"""Type-annotated function sum_list"""
+from functools import reduce
+from typing import List
 
 
-def sum_list(input_list: Iterable[float]) -> float:
-    """ takes a list of floats and returns there sum """
-    sum: float = 0.0
-    for x in input_list:
-        sum += x
-    return sum
+def sum_list(input_list: List[float]) -> float:
+    ''' returns sum of all double value of list '''
+    return reduce(lambda a, b: a + b, input_list)
